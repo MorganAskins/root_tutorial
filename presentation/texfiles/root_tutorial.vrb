@@ -1,0 +1,12 @@
+\frametitle{TChain}
+Most of the time data will be separated into multiple files. In real data this is split
+  into various "runs" depending on configuration, time, and other reasons. In simulation
+  one can separate different backgrounds and signals into different files and scale them.
+  See chainable.cpp.
+  \begin{lstlisting}
+    TChain chain("atree");
+    chain.Add("tone.root");
+    chain.Add("ttwo.root");
+    // Could also do chain.Add("t*.root");
+    chain.Draw("energy");
+  \end{lstlisting}
